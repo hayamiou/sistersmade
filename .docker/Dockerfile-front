@@ -1,0 +1,12 @@
+FROM bitnami/node:20
+
+WORKDIR /app
+
+RUN apt-get update && \
+    apt-get install -y make git vim
+
+RUN npm install -g npm@11.1.0
+
+CMD npm install && npm run start
+
+EXPOSE 4200
